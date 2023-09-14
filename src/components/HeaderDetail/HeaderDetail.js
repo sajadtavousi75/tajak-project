@@ -3,8 +3,8 @@ import React from "react";
 export default function HeaderDetail() {
   return (
     <div className="headerDetail container py-3">
-      <div className="headerDetail-content flex  justify-between	 items-center font-bold ">
-        <div className="flex justify-center items-center border-solid border-b-2 border-gmain rounded-lg w-[360px]  h-12 p-[30px]">
+      <div className="headerDetail-content flex flex-wrap	 sm:flex-wrap	 justify-center gap-3	 items-center font-bold ">
+        <div className="flex justify-end items-center border-solid border-b-2 border-gmain rounded-lg w-[360px] sm:w-[250px] lg:w-[32%] h-12 p-[30px]">
           <h1 className="ml-4">امکان پرداخت درب منزل</h1>
           <svg
             width="48"
@@ -23,7 +23,7 @@ export default function HeaderDetail() {
             />
           </svg>
         </div>
-        <div className="flex justify-center items-center border-solid border-b-2 border-gmain rounded-lg w-[360px]  h-12 p-[30px]">
+        <div className="flex justify-end items-center border-solid border-b-2 border-gmain rounded-lg w-[360px] sm:w-[250px] lg:w-[32%] h-12 p-[30px]">
           <h1 className="ml-4">ارسال به سراسر کشور و کشورهای همسایه</h1>
           <svg
             width="49"
@@ -46,7 +46,7 @@ export default function HeaderDetail() {
             />
           </svg>
         </div>
-        <div className="flex justify-center items-center border-solid border-b-2 border-gmain rounded-lg w-[360px]  h-12 p-[30px]">
+        <div className="flex justify-end items-center border-solid border-b-2 border-gmain rounded-lg w-[360px] sm:w-[250px] lg:w-[32%] h-12 p-[30px]">
           <h1 className="ml-4">امکان دانلود بیش 1500 کتاب</h1>
           <svg
             width="49"

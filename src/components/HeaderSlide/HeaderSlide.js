@@ -10,7 +10,7 @@ export default function HeaderSlide() {
   };
     
   return (
-    <div className="slider pt-[150px]">
+    <div className="slider pt-[130px]">
       <div className='container w-full  '>
      <Carousel activeIndex={index} onSelect={handleSelect} controls={false} interval={2000}>
       <Carousel.Item>

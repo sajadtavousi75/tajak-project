@@ -6,7 +6,7 @@ export default function OfferDay() {
         <div className="container">
             <div className="offerday-content">
                 <h1 className='offerday-title text-center text-lg font-bold border-solid border-gmain border-y-2 rounded-lg p-2 text-text'>پیشنهاد روز سایت</h1>
-                <div className="offerday-boxes flex justify-between	 p-5 border-solid border-gmain border-b-2 rounded-lg">
+                <div className="offerday-boxes flex flex-col md:flex-row gap-4 justify-between	 p-5 border-solid border-gmain border-b-2 rounded-lg">
                     <div className="offerday-box flex gap-4">
                         <div className="offerday-img">
                             <img className='w-[150px] h-[220px]' src="/images/be06d9a3929044ff82e28424a0d1c337.jpg" alt="" />

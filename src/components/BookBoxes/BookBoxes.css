@@ -1,0 +1,10 @@
+.book-box-img__icon{
+    visibility: hidden;
+    /* transition: all 300ms ease-in; */
+
+}
+
+.book-box:hover .book-box-img__icon{
+    visibility: visible;
+    /* transition: all 200ms ease-in; */
+}

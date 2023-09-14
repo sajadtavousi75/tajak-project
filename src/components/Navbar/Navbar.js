@@ -1,38 +1,182 @@
-import React,{useState} from "react";
+import React, { useState,useRef,useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
 
-import './Navbar.css'
+import "./Navbar.css";
 
 export default function Navbar() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [showMobile, setShowMobile]= useState(false)
+  const navbarRef = useRef(null);
 
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
-  };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (showMobile && !navbarRef.current.contains(event.target)) {
+        setShowMobile(false);
+      }
+    }
 
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
-  };
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [showMobile]);
+
+
+
+  const handelMobileMenu = (e)=>{
+    e.stopPropagation();
+    setShowMobile(!showMobile)
+    console.log(showMobile)
+    if (showMobile) {
+      document.body.classList.remove('overlay');
+    } else {
+      document.body.classList.add('overlay');
+    }
+  }
+ 
   return (
-    <div className=" w-full bg-gmelo fixed top-0 left-0 right-0 z-10">
-      <div className="container relative">
-        <div className="navbar-content flex justify-between	 items-start pt-4">
-          <div className="navbar-right">
-            <img src="/images/logo.svg" alt="" className="navbar-logo" />
+    <>
+    <div className=" w-full bg-gmelo fixed top-0 left-0 right-0 z-10 border-solid border-gmain border-b-4">
+      <div className="container ">
+        <div className="navbar-content		flex justify-between items-start pt-4 ">
+          <div className="navbar-right ">
+            <img onClick={handelMobileMenu} src="/images/Asset 3 4.png" alt="" className="navbar-logo cursor-pointer md:hidden	" />
+            <img className="hidden md:block " src="/images/logo.svg" alt="" />
           </div>
-          <div className="navbar-middle flex flex-col justify-between	 items-center w-1/3 ">
-            <div className="w-full relative pt-[9px]">
+          {/* start mobile menu */}
+          <div className="navbar-middle flex flex-col justify-between	 items-center w-2/4 md:hidden">
+            <div>
+              <img
+                className="w-[64px] h-[24px]"
+                src="/images/logo.svg"
+                alt=""
+              />
+            </div>
+            <div className="w-full relative pt-[9px] flex flex-col items-center justify-center">
               <input
-                className="bg-gmelo border-t border-b border-gmain rounded-lg w-full h-10 text-center "
+                className="bg-gmelo border-t border-b border-gmain rounded-lg w-full h-[32px] text-center "
                 type="text"
                 placeholder="نام کتاب نام نویسنده ناشر"
               />
-              <button className="absolute bottom-0 -left-4">
-                <img src="/images/search.svg" alt="" />
+              <button className="absolute bottom-0 -left-2">
+                <img className="w-8 h-8" src="/images/search.svg" alt="" />
               </button>
             </div>
-            <div className="w-full pt-2">
-              <ul className="flex font-bold justify-between w-full">
-                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex hover:bg-bg p-2 rounded-t	">
+            <div className=" 	w-full pt-2 ">
+              <ul ref={navbarRef} className={`${showMobile ? 'translate-x-0' : 'translate-x-80'} flex flex-col transition-all duration-700 font-bold text-lg  justify-start	p-4 w-[300px] h-[100vh]	absolute top-0 right-0 opacity-100	 bg-gmain `}>
+                <li className="flex  p-2 rounded-t	mx-auto">
+                  
+                  <Accordion className="w-[200px]" defaultActiveKey="0">
+                    <Accordion.Item className="bg-bg " eventKey="0">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="1">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="2">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="3">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="4">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="5">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item className="bg-bg " eventKey="6">
+                      <Accordion.Header className=" h-[30px] mb-1 text-xs bg-bg">داستان و رمان
+                      </Accordion.Header>
+                      <Accordion.Body className="text-xs bg-bg	flex flex-col gap-2">
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                        <a href="">داستان کوتاه</a>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </li>
+                <li className="flex   rounded-t w-[200px] mx-auto">
+                  <a className=" text-bg bg-text  w-full p-2 rounded-lg text-center" href="#">
+                    درباره تاجک
+                  </a>
+                </li>
+                <li className="flex   rounded-t w-[200px] mx-auto	">
+                  <a className="text-bg bg-text  w-full mt-3 p-2 rounded-lg text-center" href="#">
+                    نصب تاجک
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* end mobile menu */}
+
+          {/*start main menu */}
+          <div className="hidden navbar-middle md:flex  md:w-[40%] flex-col 	 items-center  ">
+            <div>
+              <img className="w-[64px] h-[24px] md:hidden" src="/images/logo.svg" alt="" />
+            </div>
+            <div className="w-full relative pt-[9px] md:pt-0 flex flex-col items-center justify-center">
+              <input
+                className="bg-gmelo border-t border-b border-gmain rounded-lg w-full h-[40px] text-center "
+                type="text"
+                placeholder="نام کتاب نام نویسنده ناشر"
+              />
+              <button className="absolute bottom-0 -left-2">
+                <img className="w-8 h-8 md:h-10 md:w-10" src="/images/search.svg" alt="" />
+              </button>
+            </div>
+            <div className=" 	w-full pt-2">
+              <ul className="  flex font-bold text-lg  justify-between w-full 	">
+                <li
+                  onMouseEnter={() => setIsSubMenuOpen(true)}
+                  onMouseLeave={() => setIsSubMenuOpen(false)}
+                  className="flex hover:bg-bg p-2 rounded-t	"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -69,95 +213,155 @@ export default function Navbar() {
                       </clipPath>
                     </defs>
                   </svg>
-                  <a  className="mr-5 " href="#">دسته بندی</a>
-                  {showDropdown && (
-              <ul onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`dropcontent z-10 flex justify-around	 flex-wrap	gap-5   p-3 absolute inset-x-[30%]	rounded-lg top-[100%] bg-bg w-[40%] ${showDropdown ? 'open' : ''}`}> 
-                <li className="sajad active text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
+                  <a className="mr-5  text-xs	lg:text-sm xl:text-lg" href="#">
+                    دسته بندی
+                  </a>
+                    <ul
+                    onMouseEnter={() => setIsSubMenuOpen(true)}
+                  onMouseLeave={() => setIsSubMenuOpen(false)}
+                     className={`${
+                      isSubMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 hidden translate-y-[-10px]'
+                    } transition-all duration-300 flex justify-around flex-wrap absolute top-full bg-bg md:left-[20%] lg:left-[30%] xl:left-[36%] min-w-[500px] max-w-[500px] gap-5 h-[400px]  border border-gray-300 rounded-lg p-2 shadow-lg transform -translate-y-2 `}
+                    >
+                      <li className="sajad active text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="text-gmain font-bold text-xl">
+                        داستان ورمان
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                        <ul>
+                          <li className="text-text font-normal	">
+                            داستان کوتاه
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-                <li className="text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-                <li className="text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-                <li className="text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-                <li className="text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-                <li className="text-gmain font-bold text-xl">داستان ورمان 
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                    <ul>
-                        <li className="text-text font-normal	">داستان کوتاه</li>
-                    </ul>
-                </li>
-            </ul>
-                    )}
                 </li>
                 <li className="flex hover:bg-bg p-2 rounded-t	">
                   <svg
@@ -208,7 +412,9 @@ export default function Navbar() {
                       </clipPath>
                     </defs>
                   </svg>
-                  <a className="mr-5" href="#">درباره تاجک</a>
+                  <a className="mr-5 text-xs	lg:text-sm xl:text-lg" href="#">
+                    درباره تاجک
+                  </a>
                 </li>
                 <li className="flex hover:bg-bg p-2 rounded-t	">
                   <svg
@@ -287,22 +493,29 @@ export default function Navbar() {
                       fill="#519D9E"
                     />
                   </svg>
-                  <a className="mr-5" href="#">نصب تاجک</a>
+                  <a className="mr-5 text-xs	lg:text-sm xl:text-lg" href="#">
+                    نصب تاجک
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="navbar-left flex justify-between relative w-1/6 pt-[9px] ">
-            <button className="">سبد</button>
-            <div className="">
-            <img className="absolute bottom-0 right-12" src="/images/profile.svg" alt="" />
-            <button className="border-t border-b border-gmain rounded-lg w-40 h-10 font-bold ">ورود</button>
+          {/* end main menu */}
+          <div className="navbar-left flex justify-around    ">
+            <button className="ml-3">
+              <img className=" w-6 h-6 md:w-10 md:h-10 " src="/images/Frame 365.png" alt="" />
+            </button>
+            <div className="relative">
+              <img className=" w-6 h-6 md:w-10 md:h-10 md:absolute	md:-right-2" src="/images/profile.svg" alt="" />
+              <button className="hidden md:block  border-t border-b border-gmain rounded-lg w-40 h-10 font-bold ">
+                ورود
+              </button>
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
+    </>
   );
 }
+

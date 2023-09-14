@@ -1,39 +1,31 @@
-.dropcontent{
-    overflow: hidden;
-  transform-origin: top;
-  height: 0;
-  opacity: 0;
-  transition: height 0.5s ease-in-out;
+
+.accordion-button{
+  height: 30px;
+  background-color: #C9DEE2 !important;
 }
 
 
-.dropcontent.open {
-    height: auto;
-    opacity: 1;
-    transition: height 0.5s ease-in-out;
-  }
+.accordion-button:not(.collapsed){
+  color: #C9DEE2;
+  background-color: #C9DEE2 !important;
+  box-shadow: none;
+}
 
-  @keyframes slideIn {
-    from {
-      transform: scaleY(0);
-    }
-    to {
-      transform: scaleY(1);
-    }
-  }
-  
-  .dropcontent.open {
-    animation: slideIn 0.5s ease-in-out;
-  }
+.accordion-button::after{
+  display: none;
+}
 
-  .sajad{
-    visibility: hidden;
-    opacity: 0;
-    transition: all 1s ease-in;
-  }
+.accordion-button:focus{
+  box-shadow: none !important;
+  border-color: none !important;
+}
 
-  .sajad.active{
-    visibility: visible;
-    opacity: 1;
-    transition: all 1s ease-in;
-  }
+.accordion-collapse{
+  font-size: 12px;
+  background-color: #E0EAF1;
+}
+
+
+
+
+

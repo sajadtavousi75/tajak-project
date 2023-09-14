@@ -11,8 +11,8 @@ module.exports = {
         gmain:"#519D9E",
         red:"#EB4B5A",
         gmelo:"#C9DEE2",
-        m22:"#8DBEC0"
-        
+        m22:"#8DBEC0",
+        gmainhover:"rgba(81,157,158,0.7)"
       },
       fontFamily:{
         roya:['Roya']
