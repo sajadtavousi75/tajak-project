@@ -53,7 +53,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className=" w-full bg-gmelo fixed top-0 left-0 right-0 z-10 border-solid border-gmain border-b-4">
+      <div className=" w-full bg-gmelo fixed top-0 left-0 right-0 z-10 border-solid border-gmain border-b-4 font-roya">
         <div className="container ">
           <div className="navbar-content		flex justify-between items-start pt-4 ">
             <div className="navbar-right ">
