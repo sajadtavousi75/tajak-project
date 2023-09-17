@@ -23,39 +23,39 @@ export default function BookContent() {
   return (
     <div className="bookcontent">
       <div className="container">
-        <div className="bookcontent-details flex flex-col  justify-between">
-          <div className="bookcontent-details__main flex gap-4 py-8">
+        <div className="bookcontent-details flex flex-col lg:flex-row justify-around items-center">
+          <div className="bookcontent-details__main flex items-center justify-center gap-4 py-8 ">
             <img
-              className="w-[150px] h-[220px] rounded-lg"
+              className="w-[150px] h-[220px] rounded-lg md:w-[200px] md:h-[300px]"
               src="/images/be06d9a3929044ff82e28424a0d1c337.jpg"
               alt=""
             />
             <div>
-              <h1 className="text-text text-xl font-bold border-solid border-gmain border-s-4 p-2">
+              <h1 className="text-text text-xl font-bold border-solid border-gmain border-s-4 p-2 lg:text-2xl">
                 عمارت ایدنبروک
               </h1>
-              <p className="text-gmain mt-2 text-xs	">
+              <p className="text-gmain mt-2 text-xs	 lg:text-sm	">
                 نویسنده:{" "}
                 <span className="text-text font-bold mr-4">
                   جولیا دونالدسون
                 </span>
               </p>
-              <p className="text-gmain mt-2 text-xs	">
+              <p className="text-gmain mt-2 text-xs	 lg:text-sm	">
                 مترجم:
                 <span className="text-text font-bold mr-6">الهه علوی</span>
               </p>
-              <p className="text-gmain mt-2 text-xs	">
+              <p className="text-gmain mt-2 text-xs lg:text-sm		">
                 انتشارات:{" "}
                 <span className="text-text font-bold mr-2.5">
                   اندیشه مولانا
                 </span>
               </p>
               <div className="flex items-center justify-between gap-2">
-                <p className="text-text mt-2 text-xs	">
+                <p className="text-text mt-2 text-xs	 lg:text-sm	">
                   امتیاز این کتاب از بین{" "}
                   <span className="text-gmain font-bold">11</span> نظر
                 </p>
-                <span className="flex items-center justify-between gap-2 bg-text p-1 rounded-lg text-bg text-xs	">
+                <span className="flex items-center justify-between gap-2 bg-text p-1 rounded-lg text-bg text-xs	 lg:text-sm	">
                   4.5
                   <svg
                     width="16"
@@ -73,7 +73,7 @@ export default function BookContent() {
                   </svg>
                 </span>
               </div>
-              <a className="text-gmain mt-2 font-bold text-xs	" href="">
+              <a className="text-gmain mt-2 font-bold text-xs lg:text-sm		" href="">
                 مشاهده نظرات
               </a>
               <div className="icon flex items-center justify-start gap-4 mt-4">
@@ -82,19 +82,19 @@ export default function BookContent() {
               </div>
             </div>
           </div>
-          <div className="bookcontent-details__version">
+          <div className="bookcontent-details__version pb-8 w-[450px] ">
             <div className="bookcontent-details__title flex items-center justify-between gap-2 w-[390px] font-bold border-solid border-gmain border-b-4 pt-2 px-4 mx-auto">
-              <p onClick={handelPrint} className={`${print ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center	`}>
+              <p onClick={handelPrint} className={`${print ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center lg:text-sm	`}>
                 چاپی
               </p>
-              <p onClick={handelDigital} className={`${digital ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center	`}>
+              <p onClick={handelDigital} className={`${digital ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center lg:text-sm	`}>
                 دیجیتالی
               </p>
-              <p onClick={handelAudio} className={`${audio ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center	`}>
+              <p onClick={handelAudio} className={`${audio ? 'bg-gmain text-bg' : ''} transition-all duration-700 p-2 w-[130px] h-[40px] text-center rounded-t-lg cursor-pointer text-xs flex items-center justify-center lg:text-sm	`}>
                 صوتی
               </p>
             </div>
-            <div className={`${print ? ' flex	 ' : ' hidden	 '}  bookcontent-details__printed transition-all ease-in duration-700  justify-between px-4 h-[232px] 	 text-xs`}>
+            <div className={`${print ? ' flex	 ' : ' hidden	 '}  bookcontent-details__printed transition-all ease-in duration-700  justify-between px-4 h-[232px] 	 text-xs lg:text-sm`}>
               <div className="">
                 <p className="text-gmain mt-2">شابک :</p>
                 <p className="text-gmain mt-2">قطع :</p>
@@ -127,7 +127,7 @@ export default function BookContent() {
                 </button>
               </div>
             </div>
-            <div className={`${digital ? ' flex	  ' : ' hidden	 '} bookcontent-details__digital transition-all ease-in duration-700  justify-between h-[232px] px-4 text-xs`}>
+            <div className={`${digital ? ' flex	  ' : ' hidden	 '} bookcontent-details__digital transition-all ease-in duration-700  justify-between h-[232px] px-4 text-xs lg:text-sm`}>
               <div>
                 <p className="text-gmain mt-2">حجم :</p>
                 <p className="text-gmain mt-2">فرمت:</p>
@@ -158,7 +158,7 @@ export default function BookContent() {
                 </button>
               </div>
             </div>
-            <div className={`${audio ? ' flex	 ' : ' hidden	 '} bookcontent-details__audio  transition-all ease-in duration-700 justify-between h-[232px] px-4 text-xs`}>
+            <div className={`${audio ? ' flex	 ' : ' hidden	 '} bookcontent-details__audio  transition-all ease-in duration-700 justify-between h-[232px] px-4 text-xs lg:text-sm`}>
             <div>
                 <p className="text-gmain mt-2">گوینده :</p>
                 <p className="text-gmain mt-2">انتشارات صوتی:</p>
