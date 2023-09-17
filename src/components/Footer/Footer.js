@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className="footer bg-gmelo">
+    <div className="footer bg-gmelo ">
         <img className='w-full' src="/images/Frame 178.png" alt="" />
         <div className="container">
             <div className="footer-content flex-col">
