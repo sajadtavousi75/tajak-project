@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function BookBox() {
   return (
-    <>
     <div className="book-box p-2	   w-[160px] rounded-lg transition duration-300 ease-in-out hover:bg-gmain hover:text-bg hover:transition duration-300 ease-in-out">
           <div className="relative">
           <img
@@ -20,6 +19,5 @@ export default function BookBox() {
           <h3 className="book-box__name text-end mr-4">کتاب</h3>
           <h1 className="book-box__price text-start font-bold ml-4">10$</h1>
         </div>
-    </>
   )
 }
