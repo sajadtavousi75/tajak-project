@@ -49,7 +49,7 @@ export default function Footer() {
                     <div className=''>
                         <div className="suport flex flex-col w-[450px] lg:flex-row items-center justify-between">
                             <h1 className='text-text font-bold'>پشتیبانی <span className='font-normal	'>(هر روز ساعت 7 الی 20):</span></h1>
-                            <h1 className='text-text font-bold'>03146622703</h1>
+                            <h1 className='text-text font-bold'>03100000000</h1>
                             <h1 className='text-text font-bold'>09137375094</h1>
                         </div>
                         <div className="addres flex items-center mt-4 justify-center">
