@@ -32,13 +32,10 @@ border: none !important;
 .accordion-collapse{
   font-size: 12px;
   background-color: #E0EAF1;
-  /* border-radius: 8px; */
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.accordion-collapse .show{
 
-}
 
 .accordion-item{
   background-color: #519D9E !important;
