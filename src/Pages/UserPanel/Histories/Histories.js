@@ -10,8 +10,10 @@ export default function Histories() {
     <>
     <Navbar />
     <section className="main flex font-roya bg-bg pt-[120px]">
+      <div className='container flex'>
       <Sidebar />
       <HistorySection />
+      </div>
     </section>
     <footer className='font-roya bg-bg'>
       <Footer />

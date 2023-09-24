@@ -9,6 +9,7 @@ import EditProfile from "./Pages/UserPanel/EditProfile/EditProfile"
 import Histories from "./Pages/UserPanel/Histories/Histories"
 import Saved from "./Pages/UserPanel/Saved/Saved"
 import Addres from "./Pages/UserPanel/Addres/Addres"
+import Basket from "./Pages/Basket/Basket"
 
 const routes=[
     {path:'/' , element:<Home />},
@@ -18,6 +19,7 @@ const routes=[
     {path:'/about' , element:<About />},
     {path:'/register' , element:<Register />},
     {path:'/login' , element:<Login />},
+    {path:'/basket' , element:<Basket />},
     {path:'/my-account/edit' , element:<EditProfile />},
     {path:'/my-account/history' , element:<Histories />},
     {path:'/my-account/saved' , element:<Saved />},

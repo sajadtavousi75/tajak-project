@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
-import BookShopContent from '../../components/BookShopContent/BookShopContent'
+import BasketSection from '../../components/BasketSection/BasketSection'
 
-export default function BookShop() {
+export default function Basket() {
   return (
     <>
     <Navbar />
-    <section className="main font-roya bg-bg pt-[120px]">
-        <div className="container">
-        <BookShopContent />
-        </div>
+    <section className="main font-roya bg-bg pt-[130px]">
+      <div className="container">
+        <BasketSection />
+      </div>
     </section>
     <footer className='font-roya bg-bg'>
       <Footer />

@@ -13,8 +13,8 @@ export default function BookShopContent() {
     }
 
   return (
-    <div className="bookshopcontent  h-full ">
-        <div className={`${showSidebar ? 'translate-x-0' : 'translate-x-[240px]'} sidebar transition-all duration-700 absolute top-24 w-[240px] h-full bg-gmelo z-10 	  	 md:translate-x-0`}>
+    <div className="bookshopcontent    h-full ">
+        <div className={`${showSidebar ? 'translate-x-0' : 'translate-x-[240px]'} sidebar transition-all duration-700 absolute top-30 w-[240px] h-full bg-bg z-10 	  	 md:translate-x-0`}>
             <div className="container">
                 <div className="sidebar-content p-3">
                     <img onClick={closeSidebar}  className='cursor-pointer md:hidden' src="/images/filter.png" alt="" />
@@ -70,8 +70,8 @@ export default function BookShopContent() {
                 </div>
             </div>
         </div>
-        <div className="main-shop  bg-bg z-0 md:mr-[240px] mt-4	">
-            <div className="container">
+        <div className="main-shop   z-0 md:mr-[240px] mt-4	">
+            <div className="container ">
                 <div className="mainshop-search flex items-center  gap-16 md:justify-center">
                     <img onClick={handelSidebar} className='cursor-pointer md:hidden' src="/images/filter.png" alt="" />
                     <div className='flex items-center  gap-2  '>
@@ -80,7 +80,7 @@ export default function BookShopContent() {
                     <button className='border-solid border-gmain border-2 rounded-lg text-text p-1 text-xs font-bold md:text-sm'>تخفیف ها</button>
                     </div>
                 </div>
-                <div className="mainshop-boxes">
+                <div className="mainshop-boxes bg-gmelo mt-3 rounded-lg">
                     <div className="mainshop-box flex flex-wrap items-center justify-center gap-3 py-4">
                         <BookBox />
                         <BookBox />

@@ -9,8 +9,10 @@ export default function EditProfile() {
     <>
     <Navbar />
     <section className="main flex font-roya bg-bg pt-[120px]">
+      <div className="container flex">
       <Sidebar />
       <EditSection />
+      </div>
     </section>
     <footer className='font-roya bg-bg'>
       <Footer />
