@@ -11,6 +11,9 @@ import Saved from "./Pages/UserPanel/Saved/Saved"
 import Addres from "./Pages/UserPanel/Addres/Addres"
 import Basket from "./Pages/Basket/Basket"
 
+import AdminPanel from "./Pages/AdminPanel/AdminPanel"
+import AdminPanelIndex from "./Pages/AdminPanel/AdminPanelIndex/AdminPanelIndex"
+
 const routes=[
     {path:'/' , element:<Home />},
     {path:'/book' , element:<Book />},
@@ -24,6 +27,11 @@ const routes=[
     {path:'/my-account/history' , element:<Histories />},
     {path:'/my-account/saved' , element:<Saved />},
     {path:'/my-account/addres' , element:<Addres />},
+    {path:'/p-admin/*' , element:<AdminPanel />,
+    children:[
+        {path: "" , element: <AdminPanelIndex />}
+    ]
+},
 ]
 
 export default routes
