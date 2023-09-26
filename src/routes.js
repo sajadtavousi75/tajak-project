@@ -13,6 +13,10 @@ import Basket from "./Pages/Basket/Basket"
 
 import AdminPanel from "./Pages/AdminPanel/AdminPanel"
 import AdminPanelIndex from "./Pages/AdminPanel/AdminPanelIndex/AdminPanelIndex"
+import AdminSlider from "./Pages/AdminPanel/AdminSlider/AdminSlider"
+import AdminUsers from "./Pages/AdminPanel/AdminUsers/AdminUsers"
+import AdminComments from "./Pages/AdminPanel/AdminComments/AdminComments"
+import AdminOrder from "./Pages/AdminPanel/AdminOrder/AdminOrder"
 
 const routes=[
     {path:'/' , element:<Home />},
@@ -29,7 +33,11 @@ const routes=[
     {path:'/my-account/addres' , element:<Addres />},
     {path:'/p-admin/*' , element:<AdminPanel />,
     children:[
-        {path: "" , element: <AdminPanelIndex />}
+        {path: "" , element: <AdminPanelIndex />},
+        {path: "slider" , element: <AdminSlider />},
+        {path: "users" , element: <AdminUsers />},
+        {path: "comments" , element: <AdminComments />},
+        {path: "orders" , element: <AdminOrder />},
     ]
 },
 ]

@@ -1,0 +1,4 @@
+.table>:not(caption)>*>*{
+    background-color: #C9DEE2 !important;
+    border-radius: 8px !important;
+}
