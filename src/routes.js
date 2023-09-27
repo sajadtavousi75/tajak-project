@@ -17,6 +17,7 @@ import AdminSlider from "./Pages/AdminPanel/AdminSlider/AdminSlider"
 import AdminUsers from "./Pages/AdminPanel/AdminUsers/AdminUsers"
 import AdminComments from "./Pages/AdminPanel/AdminComments/AdminComments"
 import AdminOrder from "./Pages/AdminPanel/AdminOrder/AdminOrder"
+import AdminAddProduct from "./Pages/AdminPanel/AdminAddProduct/AdminAddProduct"
 
 const routes=[
     {path:'/' , element:<Home />},
@@ -38,6 +39,7 @@ const routes=[
         {path: "users" , element: <AdminUsers />},
         {path: "comments" , element: <AdminComments />},
         {path: "orders" , element: <AdminOrder />},
+        {path: "add-product" , element: <AdminAddProduct />},
     ]
 },
 ]
