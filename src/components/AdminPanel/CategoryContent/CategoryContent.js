@@ -107,10 +107,10 @@ export default function CategoryContent() {
             </div>
           </div>
           <div className="modal-middel mt-5">
-            <h1 className=" text-center font-bold text-text">
+            <h1 className="hidden  text-center font-bold text-text">
               تاکنون هیچ گروهی ایجاد نشده است.
             </h1>
-            <div className="hidden content-group bg-gmelo  p-3 flex items-center justify-center flex-wrap  gap-3">
+            <div className="content-group bg-gmelo  p-3 flex items-center justify-center flex-wrap  gap-3">
               <div className="w-[180px] h-10 border-solid border-gmain border-x-2 rounded-lg p-2 flex items-center justify-center">
                 <span>علوم اجتماعی</span>
               </div>

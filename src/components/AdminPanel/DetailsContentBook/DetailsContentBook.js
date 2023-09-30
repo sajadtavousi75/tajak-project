@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
+import Switch from "../Switch/Switch";
+
 export default function DetailsContentBook() {
   const [isModalAuthor, setIsModalAuthor] = useState(false);
   const [isModalAuthorContent, setIsModalAuthorContent] = useState(false);
+  const [valueToggle, setValueToggle] = useState(false);
 
   const handelchange = () => {
     setIsModalAuthor(false);
@@ -25,7 +28,7 @@ export default function DetailsContentBook() {
               عنوان کتاب
             </p>
           </div>
-          <div className="border-dotted border-gmain border-2 rounded-lg flex flex-col gap-3 mt-4 p-2">
+          <div className="border-dashed border-gmain border-2 rounded-lg flex flex-col gap-3 mt-4 p-2">
             <button
               onClick={() => setIsModalAuthor(true)}
               className="w-[150px] h-10 bg-gmain text-bg rounded-lg"
@@ -36,15 +39,23 @@ export default function DetailsContentBook() {
           </div>
         </div>
         <div className="left">
-          <div className="toggle border-dotted border-gmain border-2 rounded-lg p-2">
+          <div
+            className={`toggle border-dashed border-gmain overflow-hidden border-2 rounded-lg p-2  transition-all duration-700 ${
+              valueToggle ? "h-[110px]" : "h-[50px]"
+            }`}
+          >
             <div className="flex gap-2 items-center justify-start">
               <h1>مترجم</h1>
-              <label htmlFor="">
-                <input type="checkbox" />
-              </label>
+              <Switch
+              ison={valueToggle}
+              handeltoggle={()=> setValueToggle(!valueToggle)}
+              name={'toggle2'}
+              />
             </div>
             <input
-              className="h-10 bg-bg rounded-lg w-full mt-4 p-2"
+              className={`h-10 bg-gmelo border-solid border-gmain border-1 rounded-lg w-full mt-4 p-2 transition-all duration-300 ${
+                valueToggle ? "" : ""
+              }`}
               type="text"
             />
           </div>
@@ -213,7 +224,7 @@ export default function DetailsContentBook() {
                 </p>
               </div>
               <div className="file flex items-center justify-center gap-3	">
-              <h1 className="text-text font-bold">افزودن پروفایل</h1>
+                <h1 className="text-text font-bold">افزودن پروفایل</h1>
                 <label htmlFor="upload-file">
                   <span>
                     <img
