@@ -3,7 +3,8 @@ import Modal from "react-modal";
 
 export default function ProductBox() {
   const [isModalDiscount, setIsModalDiscount] = useState(false);
-  const [isModalDelet , setIsModalDelet] =useState(false)
+  const [isModalDelet, setIsModalDelet] = useState(false);
+  const [isModalOffer, setIsModalOffer] = useState(false);
   return (
     <div className="productbox p-3 border-solid border-gmain border-y-2 rounded-lg flex items-center justify-between">
       <div className="right flex items-center justify gap-2">
@@ -26,82 +27,130 @@ export default function ProductBox() {
         </div>
       </div>
       <div className="left flex items-center justify-center gap-2">
-        <div className="btn-discount h-[60px] flex items-center  gap-2 border-dashed border-gmain border-2 rounded-lg p-1">
-          <button
-            onClick={() => setIsModalDiscount(true)}
-            className="w-[150px] h-10 bg-gmain text-bg rounded-lg"
-          >
-            افزودن تخفیف
-          </button>
-          <svg
-            className="mt-3"
-            width="40"
-            height="40"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_d_2452_26993)">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <div className="btn-discount w-[220px] h-[60px] flex items-center justify-center  gap-2 border-dashed border-gmain border-2 rounded-lg p-1">
+            <button
+              onClick={() => setIsModalDiscount(true)}
+              className="w-[150px] h-10 bg-gmain text-bg rounded-lg"
+            >
+              افزودن تخفیف
+            </button>
+            <svg
+              className="mt-4"
+              width="60"
+              height="60"
+              viewBox="0 0 53 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_2251_26931)">
+                <path
+                  d="M25.8748 12.3115C25.8748 11.5755 25.6584 10.8561 25.2529 10.2443C24.8474 9.63243 24.2712 9.15564 23.597 8.87429C22.9228 8.59295 22.181 8.51971 21.4656 8.66376C20.7501 8.80788 20.0931 9.1628 19.5776 9.6837C19.0622 10.2046 18.7116 10.868 18.57 11.59C18.4285 12.312 18.5025 13.0601 18.7826 13.7396C19.0627 14.4192 19.5364 14.9997 20.1437 15.4076C20.751 15.8155 21.4645 16.0325 22.1941 16.0312C22.678 16.0312 23.1573 15.9349 23.6042 15.7479C24.0512 15.5609 24.4573 15.2868 24.7992 14.9413C25.141 14.5958 25.412 14.1857 25.5966 13.7344C25.7812 13.2832 25.8758 12.7996 25.8748 12.3115ZM20.5113 12.3115C20.5113 11.9771 20.6096 11.6502 20.7938 11.3722C20.978 11.0941 21.2397 10.8774 21.546 10.7494C21.8523 10.6215 22.1893 10.588 22.5144 10.6532C22.8395 10.7184 23.1382 10.8795 23.3726 11.116C23.607 11.3524 23.7666 11.6536 23.8313 11.9816C23.896 12.3097 23.8628 12.6496 23.7359 12.9585C23.6091 13.2674 23.3943 13.5315 23.1186 13.7173C22.843 13.9031 22.5189 14.0022 22.1874 14.0022C21.744 14.0005 21.3194 13.8215 21.0065 13.5047C20.6937 13.1878 20.518 12.7587 20.518 12.3115H20.5113Z"
+                  fill="#519D9E"
+                />
+                <path
+                  d="M30.6683 17.6813C29.9391 17.6813 29.2261 17.8994 28.6197 18.3082C28.0133 18.7169 27.5407 19.2978 27.2616 19.9775C26.9825 20.6572 26.9095 21.4051 27.0518 22.1267C27.194 22.8482 27.5453 23.511 28.061 24.0312C28.5766 24.5514 29.2337 24.9057 29.9489 25.0492C30.6642 25.1927 31.4057 25.1191 32.0795 24.8375C32.7533 24.556 33.3292 24.0792 33.7343 23.4675C34.1395 22.8558 34.3557 22.1367 34.3557 21.401C34.3557 20.4145 33.9673 19.4683 33.2757 18.7708C32.5842 18.0732 31.6463 17.6813 30.6683 17.6813ZM30.6683 23.0918C30.3366 23.0918 30.0122 22.9924 29.7365 22.8063C29.4607 22.6203 29.2459 22.3558 29.1192 22.0465C28.9926 21.7371 28.9598 21.3968 29.0249 21.0687C29.0902 20.7405 29.2505 20.4392 29.4855 20.2031C29.7207 19.9668 30.0199 19.8063 30.3455 19.7419C30.6711 19.6774 31.0083 19.7119 31.3144 19.8409C31.6206 19.9699 31.8819 20.1876 32.0653 20.4666C32.2486 20.7455 32.3458 21.0731 32.3444 21.4078C32.3409 21.8538 32.1628 22.2804 31.8488 22.5946C31.5349 22.9087 31.1105 23.085 30.6683 23.085V23.0918Z"
+                  fill="#519D9E"
+                />
+                <path
+                  d="M32.4652 10.8033C32.3723 10.7084 32.2616 10.6331 32.1396 10.5817C32.0177 10.5303 31.8867 10.5038 31.7545 10.5038C31.6223 10.5038 31.4914 10.5303 31.3694 10.5817C31.2475 10.6331 31.1368 10.7084 31.0438 10.8033L20.4308 21.4754C20.3367 21.5691 20.2621 21.6808 20.2111 21.8038C20.1601 21.9269 20.1339 22.0589 20.1339 22.1923C20.1339 22.3257 20.1601 22.4577 20.2111 22.5808C20.2621 22.7038 20.3367 22.8155 20.4308 22.9092C20.6196 23.0989 20.875 23.2058 21.1414 23.2067C21.4035 23.2163 21.6588 23.1216 21.8521 22.943L32.4652 12.2371C32.5592 12.1434 32.6339 12.0317 32.6849 11.9087C32.7359 11.7856 32.7621 11.6536 32.7621 11.5202C32.7621 11.3868 32.7359 11.2548 32.6849 11.1317C32.6339 11.0087 32.5592 10.897 32.4652 10.8033Z"
+                  fill="#519D9E"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_2251_26931"
+                  x="0.5"
+                  y="0.591797"
+                  width="51.8555"
+                  height="52.5293"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feMorphology
+                    radius="2"
+                    operator="dilate"
+                    in="SourceAlpha"
+                    result="effect1_dropShadow_2251_26931"
+                  />
+                  <feOffset dy="10" />
+                  <feGaussianBlur stdDeviation="8" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.180392 0 0 0 0 0.227451 0 0 0 0 0.282353 0 0 0 0.16 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_2251_26931"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_2251_26931"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div className="btn-offer w-[220px] h-[60px] flex items-center  gap-2 border-dashed border-gmain border-2 rounded-lg p-1">
+            <button
+              onClick={() => setIsModalOffer(true)}
+              className="w-[150px] h-10 bg-gmain text-bg rounded-lg"
+            >
+              انتخاب پیشنهاد روز
+            </button>
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M28.7083 13.401C28.7083 12.3324 28.394 11.2877 27.8053 10.3994C27.2165 9.51101 26.3798 8.8187 25.4009 8.41018C24.4219 8.00167 23.3449 7.89532 22.3061 8.10449C21.2672 8.31375 20.3132 8.82911 19.5647 9.58544C18.8163 10.3418 18.3072 11.305 18.1017 12.3534C17.8962 13.4017 18.0037 14.488 18.4104 15.4747C18.8171 16.4614 19.5049 17.3042 20.3866 17.8966C21.2684 18.4888 22.3045 18.804 23.3638 18.802C24.0665 18.802 24.7624 18.6623 25.4114 18.3907C26.0604 18.1191 26.65 17.7212 27.1464 17.2195C27.6428 16.7179 28.0363 16.1224 28.3043 15.4671C28.5723 14.8119 28.7096 14.1098 28.7083 13.401ZM20.9204 13.401C20.9204 12.9155 21.0632 12.4408 21.3306 12.0371C21.598 11.6334 21.9781 11.3187 22.4228 11.1329C22.8676 10.9471 23.3568 10.8985 23.829 10.9932C24.301 11.0879 24.7347 11.3217 25.075 11.6651C25.4154 12.0084 25.6472 12.4458 25.7411 12.9221C25.835 13.3983 25.7868 13.8919 25.6026 14.3405C25.4184 14.7891 25.1065 15.1725 24.7063 15.4423C24.306 15.712 23.8355 15.856 23.3541 15.856C22.7104 15.8534 22.0938 15.5936 21.6395 15.1335C21.1853 14.6734 20.9301 14.0504 20.9301 13.401H20.9204Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 29.6914C8.43595 29.6914 2.29446 23.5499 2.29446 15.9858C2.29446 11.3525 4.59962 7.25311 8.12237 4.77204C8.64092 4.40646 8.76482 3.69059 8.40077 3.17357C8.03671 2.65502 7.31931 2.53112 6.8023 2.89517C2.6891 5.79231 0 10.577 0 15.9858C0 24.8164 7.16941 31.9858 16 31.9858C16.6333 31.9858 17.1472 31.4718 17.1472 30.8386C17.1472 30.2053 16.6333 29.6914 16 29.6914Z"
                 fill="#519D9E"
               />
               <path
-                d="M35.6685 21.198C34.6096 21.198 33.5744 21.5147 32.6939 22.1083C31.8134 22.7017 31.1272 23.5452 30.7219 24.5321C30.3167 25.519 30.2106 26.605 30.4172 27.6527C30.6238 28.7004 31.1338 29.6628 31.8826 30.4181C32.6313 31.1734 33.5854 31.6878 34.6239 31.8962C35.6625 32.1046 36.7391 31.9977 37.7174 31.5889C38.6958 31.1801 39.532 30.4878 40.1203 29.5996C40.7087 28.7114 41.0226 27.6673 41.0226 26.599C41.0226 25.1666 40.4586 23.7928 39.4544 22.7799C38.4504 21.767 37.0885 21.198 35.6685 21.198ZM35.6685 29.054C35.1868 29.054 34.7158 28.9098 34.3154 28.6395C33.915 28.3694 33.603 27.9854 33.4191 27.5363C33.2352 27.0871 33.1876 26.5929 33.2823 26.1165C33.377 25.6399 33.6097 25.2025 33.951 24.8596C34.2924 24.5166 34.727 24.2836 35.1997 24.19C35.6725 24.0964 36.1621 24.1464 36.6066 24.3338C37.0511 24.521 37.4306 24.8372 37.6968 25.2422C37.9631 25.6473 38.1041 26.1229 38.1022 26.6089C38.0971 27.2565 37.8384 27.8759 37.3826 28.3321C36.9267 28.7882 36.3106 29.0442 35.6685 29.0442V29.054Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.8841 2.30779C24.0367 2.76363 29.7055 8.7185 29.7055 15.9858C29.7055 20.1632 27.8333 23.9047 24.8826 26.4195C24.4008 26.8309 24.3426 27.556 24.7541 28.0378C25.1641 28.5196 25.8891 28.5778 26.3709 28.1663C29.8157 25.2309 32 20.8608 32 15.9858C32 7.50091 25.3813 0.550241 17.0294 0.017927C16.3977 -0.0218436 15.8516 0.458463 15.8119 1.0902C15.7721 1.72194 16.2524 2.26802 16.8841 2.30779Z"
                 fill="#519D9E"
               />
               <path
-                d="M38.2775 11.2111C38.1427 11.0733 37.9819 10.964 37.8048 10.8893C37.6277 10.8147 37.4376 10.7763 37.2456 10.7763C37.0536 10.7763 36.8636 10.8147 36.6864 10.8893C36.5094 10.964 36.3486 11.0733 36.2137 11.2111L20.8035 26.7071C20.6669 26.8432 20.5586 27.0053 20.4845 27.1839C20.4105 27.3626 20.3724 27.5543 20.3724 27.748C20.3724 27.9416 20.4105 28.1334 20.4845 28.312C20.5586 28.4908 20.6669 28.6529 20.8035 28.7889C21.0777 29.0643 21.4485 29.2196 21.8354 29.221C22.2159 29.2349 22.5865 29.0973 22.8673 28.838L38.2775 13.293C38.4141 13.1569 38.5225 12.9948 38.5965 12.8161C38.6706 12.6375 38.7087 12.4457 38.7087 12.252C38.7087 12.0584 38.6706 11.8667 38.5965 11.688C38.5225 11.5094 38.4141 11.3472 38.2775 11.2111Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M27.9159 26.9915H25.2482V24.3239C25.2482 23.6906 24.7342 23.1766 24.101 23.1766C23.4677 23.1766 22.9537 23.6906 22.9537 24.3239V28.1388C22.9537 28.772 23.4677 29.286 24.101 29.286H27.9159C28.5491 29.286 29.0631 28.772 29.0631 28.1388C29.0631 27.5055 28.5491 26.9915 27.9159 26.9915Z"
                 fill="#519D9E"
               />
-            </g>
-            <defs>
-              <filter
-                id="filter0_d_2452_26993"
-                x="0"
-                y="0"
-                width="59.0234"
-                height="60"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feMorphology
-                  radius="2"
-                  operator="dilate"
-                  in="SourceAlpha"
-                  result="effect1_dropShadow_2452_26993"
-                />
-                <feOffset dy="10" />
-                <feGaussianBlur stdDeviation="8" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0.180392 0 0 0 0 0.227451 0 0 0 0 0.282353 0 0 0 0.16 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_2452_26993"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_2452_26993"
-                  result="shape"
-                />
-              </filter>
-            </defs>
-          </svg>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4.97132 3.63093H7.63748V6.29709C7.63748 6.93036 8.15143 7.44431 8.7847 7.44431C9.41797 7.44431 9.93193 6.93036 9.93193 6.29709V2.4837C9.93193 1.85043 9.4195 1.33647 8.7847 1.33647H4.97132C4.33805 1.33647 3.82409 1.85043 3.82409 2.4837C3.82409 3.11697 4.33805 3.63093 4.97132 3.63093Z"
+                fill="#519D9E"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.4436 7.19651C11.5885 7.19651 7.64818 11.1384 7.64818 15.9919C7.64818 20.847 11.5885 24.7873 16.4436 24.7873C21.2971 24.7873 25.239 20.847 25.239 15.9919C25.239 11.1384 21.2971 7.19651 16.4436 7.19651ZM14.914 11.7854V15.6095C14.914 15.9139 15.0348 16.2061 15.2505 16.4218L18.3098 19.481C18.7564 19.9277 19.4845 19.9277 19.9312 19.481C20.3794 19.0328 20.3794 18.3063 19.9312 17.8581L17.2084 15.1353V11.7854C17.2084 11.1522 16.6945 10.6382 16.0612 10.6382C15.4279 10.6382 14.914 11.1522 14.914 11.7854Z"
+                fill="#519D9E"
+              />
+            </svg>
+          </div>
         </div>
-        <div className="btn-delet border-dashed border-gmain border-2 rounded-lg p-1 h-[60px] flex items-center justify-center transition-all duration-700 hover:bg-red">
-          <button onClick={()=> setIsModalDelet(true)}>
+        <div className="btn-delet border-dashed border-gmain border-2 rounded-lg p-1 h-[130px] flex items-center justify-center transition-all duration-700 hover:bg-red">
+          <button onClick={() => setIsModalDelet(true)}>
             <img src="/images/deletprofile.png" alt="" />
           </button>
         </div>
@@ -176,12 +225,14 @@ export default function ProductBox() {
                     type="text"
                   />
                   <p className="bg-bg text-text absolute -top-4 right-2">
-                  مقدار دلخواه
+                    مقدار دلخواه
                   </p>
                 </div>
               </div>
               <div className="add mt-3">
-                <button className="w-[150px] h-10 bg-gmain text-bg rounded-lg font-bold">ثبت تخفیف</button>
+                <button className="w-[150px] h-10 bg-gmain text-bg rounded-lg font-bold">
+                  ثبت تخفیف
+                </button>
               </div>
             </div>
           </div>
@@ -206,10 +257,128 @@ export default function ProductBox() {
         >
           <div className="modal-middel mt-5">
             <div className=" content-discount bg-bg p-3 flex flex-col items-center justify-center flex-wrap  gap-3 rounded-lg">
-              <h1 className="font-bold text">آیا از حذف کردن این محصول اطمینان دارید؟</h1>
+              <h1 className="font-bold text">
+                آیا از حذف کردن این محصول اطمینان دارید؟
+              </h1>
               <div className="btns flex gap-3 mt-3">
-                <button className="w-[150px] h-10 bg-gmain rounded-lg text-bg">بلی</button>
-                <button onClick={()=> setIsModalDelet(false)} className="w-[150px] h-10 bg-gmelo rounded-lg text-text">خیر</button>
+                <button className="w-[150px] h-10 bg-gmain rounded-lg text-bg">
+                  بلی
+                </button>
+                <button
+                  onClick={() => setIsModalDelet(false)}
+                  className="w-[150px] h-10 bg-gmelo rounded-lg text-text"
+                >
+                  خیر
+                </button>
+              </div>
+            </div>
+          </div>
+        </Modal>
+        <Modal
+          className="w-[400px] h-[500px] overflow-y-auto	mt-[130px] bg-bg  mx-auto p-4 font-roya md:w-[750px] rounded-lg "
+          isOpen={isModalOffer}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+            },
+            // content: {
+            //   width: "400px",
+            //   height: "500px",
+            //   margin: "auto",
+            //   backgroundColor: "#E0EAF1",
+            //   padding:"20px",
+            //   marginTop:"100px"
+
+            // },
+          }}
+        >
+          <div className="modal-top flex flex-wrap items-center justify-start gap-2 md:justify-between">
+            <div
+              onClick={() => setIsModalOffer(false)}
+              className="bg-gmain w-10 h-10 flex items-center justify-center rounded-full hover:bg-gmelo hover:text-text"
+            >
+              <img src="/images/close.svg" alt="" />
+            </div>
+            <div className="flex gap-2 mt-3">
+              <h1 className="text-text font-bold">پیشنهاد روز</h1>
+            </div>
+            <div>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 29.6914C8.43595 29.6914 2.29446 23.5499 2.29446 15.9858C2.29446 11.3525 4.59962 7.25311 8.12237 4.77204C8.64092 4.40646 8.76482 3.69059 8.40077 3.17357C8.03671 2.65502 7.31931 2.53112 6.8023 2.89517C2.6891 5.79231 0 10.577 0 15.9858C0 24.8164 7.16941 31.9858 16 31.9858C16.6333 31.9858 17.1472 31.4718 17.1472 30.8386C17.1472 30.2053 16.6333 29.6914 16 29.6914Z"
+                  fill="#519D9E"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.8841 2.30779C24.0367 2.76363 29.7055 8.7185 29.7055 15.9858C29.7055 20.1632 27.8333 23.9047 24.8826 26.4195C24.4008 26.8309 24.3426 27.556 24.7541 28.0378C25.1641 28.5196 25.8891 28.5778 26.3709 28.1663C29.8157 25.2309 32 20.8608 32 15.9858C32 7.50091 25.3813 0.550241 17.0294 0.017927C16.3977 -0.0218436 15.8516 0.458463 15.8119 1.0902C15.7721 1.72194 16.2524 2.26802 16.8841 2.30779Z"
+                  fill="#519D9E"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M27.9159 26.9915H25.2482V24.3239C25.2482 23.6906 24.7342 23.1766 24.101 23.1766C23.4677 23.1766 22.9537 23.6906 22.9537 24.3239V28.1388C22.9537 28.772 23.4677 29.286 24.101 29.286H27.9159C28.5491 29.286 29.0631 28.772 29.0631 28.1388C29.0631 27.5055 28.5491 26.9915 27.9159 26.9915Z"
+                  fill="#519D9E"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.97132 3.63093H7.63748V6.29709C7.63748 6.93036 8.15143 7.44431 8.7847 7.44431C9.41797 7.44431 9.93193 6.93036 9.93193 6.29709V2.4837C9.93193 1.85043 9.4195 1.33647 8.7847 1.33647H4.97132C4.33805 1.33647 3.82409 1.85043 3.82409 2.4837C3.82409 3.11697 4.33805 3.63093 4.97132 3.63093Z"
+                  fill="#519D9E"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.4436 7.19651C11.5885 7.19651 7.64818 11.1384 7.64818 15.9919C7.64818 20.847 11.5885 24.7873 16.4436 24.7873C21.2971 24.7873 25.239 20.847 25.239 15.9919C25.239 11.1384 21.2971 7.19651 16.4436 7.19651ZM14.914 11.7854V15.6095C14.914 15.9139 15.0348 16.2061 15.2505 16.4218L18.3098 19.481C18.7564 19.9277 19.4845 19.9277 19.9312 19.481C20.3794 19.0328 20.3794 18.3063 19.9312 17.8581L17.2084 15.1353V11.7854C17.2084 11.1522 16.6945 10.6382 16.0612 10.6382C15.4279 10.6382 14.914 11.1522 14.914 11.7854Z"
+                  fill="#519D9E"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="modal-middel mt-5">
+            <div className=" content-offer bg-bg p-3 flex flex-col items-center justify-center flex-wrap  gap-3 rounded-lg">
+              <div className="input mt-3">
+                <div className=" relative">
+                  <input
+                    className="w-[270px] h-10 border-solid border-gmain border-1 p-1 rounded-lg bg-bg 	"
+                    type="text"
+                  />
+                  <p className="bg-bg text-text absolute -top-4 right-2">
+                  عنوان اصلی
+                  </p>
+                </div>
+                <h1 className="text-text mt-3">عنوان فرعی</h1>
+                <div className=" relative mt-2">
+                  <input
+                    className="w-[270px] h-10 border-solid border-gmain border-1 p-1 rounded-lg bg-bg 	"
+                    type="text"
+                  />
+                </div>
+                <div className=" relative mt-2">
+                  <input
+                    className="w-[270px] h-10 border-solid border-gmain border-1 p-1 rounded-lg bg-bg 	"
+                    type="text"
+                  />
+                </div>
+                <div className=" relative mt-2">
+                  <input
+                    className="w-[270px] h-10 border-solid border-gmain border-1 p-1 rounded-lg bg-bg 	"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="add mt-3">
+                <button className="w-[150px] h-10 bg-gmain text-bg rounded-lg font-bold">
+                  ثبت 
+                </button>
               </div>
             </div>
           </div>
