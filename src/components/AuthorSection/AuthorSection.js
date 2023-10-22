@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AuthorSection() {
   return (
-    <div className="authorsection py-5">
+    <div className="authorsection mt-16">
         <div className="container">
             <div className="authorsection-content  flex flex-wrap	gap-5 items-center justify-around	">
                 <div className="authorsection-content__box w-[170px]">

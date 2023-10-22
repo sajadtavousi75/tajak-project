@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PublisherSection() {
   return (
-    <div className="publishersection py-5">
+    <div className="publishersection bg-bg pb-16 mt-16">
         <div className="container">
             <div className="publishersection-content  flex flex-wrap	gap-5 items-center justify-around	">
                 <div className="publishersection-content__box w-[170px]">

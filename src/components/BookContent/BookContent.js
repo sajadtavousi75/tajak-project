@@ -21,7 +21,7 @@ export default function BookContent() {
         setPrint(false)
     }
   return (
-    <div className="bookcontent">
+    <div className="bookcontent mt-16">
       <div className="container">
         <div className="bookcontent-details flex flex-col lg:flex-row justify-around items-center">
           <div className="bookcontent-details__main flex items-center justify-center gap-4 py-8 ">

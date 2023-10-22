@@ -2,7 +2,7 @@ import React from "react";
 
 export default function EditSection() {
   return (
-    <div className="editsection bg-gmelo py-3 rounded-lg w-full my-3">
+    <div className="editsection bg-gmelo  rounded-lg w-full ">
       <div className="container">
         <div className="editcontent flex flex-col gap-4  w-full p-5">
           <div className="flex items-center justify-between">

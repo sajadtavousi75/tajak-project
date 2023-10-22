@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeaderDetail() {
   return (
-    <div className="headerDetail container py-3">
+    <div className="headerDetail container mt-16">
       <div className="headerDetail-content flex flex-wrap	 sm:flex-wrap	 justify-center gap-3	 items-center font-bold ">
         <div className="flex justify-end items-center border-solid border-b-2 border-gmain rounded-lg w-[360px] sm:w-[250px] lg:w-[32%] h-12 p-[30px]">
           <h1 className="ml-4">امکان پرداخت درب منزل</h1>

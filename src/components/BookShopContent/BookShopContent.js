@@ -13,7 +13,7 @@ export default function BookShopContent() {
     }
 
   return (
-    <div className="bookshopcontent    h-full ">
+    <div className="bookshopcontent py-16   h-full ">
         <div className={`${showSidebar ? 'translate-x-0' : 'translate-x-[240px]'} sidebar transition-all duration-700 absolute top-30 w-[240px] h-full bg-bg z-10 	  	 md:translate-x-0`}>
             <div className="container">
                 <div className="sidebar-content p-3">
@@ -70,7 +70,7 @@ export default function BookShopContent() {
                 </div>
             </div>
         </div>
-        <div className="main-shop   z-0 md:mr-[240px] mt-4	">
+        <div className="main-shop   z-0 md:mr-[240px] 	">
             <div className="container ">
                 <div className="mainshop-search flex items-center  gap-16 md:justify-center">
                     <img onClick={handelSidebar} className='cursor-pointer md:hidden' src="/images/filter.png" alt="" />

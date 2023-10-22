@@ -3,7 +3,7 @@ import React from 'react'
 export default function AboutBook() {
   return (
     <>
-    <div className="aboutbook bg-gmelo">
+    <div className="aboutbook bg-gmelo mt-16">
         <div className="container">
             <div className="aboutbook-content">
                 <h1 className='bg-bg w-[380px] h-10 flex items-center justify-center rounded-b-lg text-lg	font-bold mx-auto text-text'>درباره کتاب</h1>

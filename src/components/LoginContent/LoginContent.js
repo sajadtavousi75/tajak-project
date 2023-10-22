@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LoginContent() {
   return (
-    <div className="logincontent py-5">
+    <div className="logincontent py-16">
       <div className="container">
         <div className="content flex items-center justify-center gap-5">
           <div className="img  ">

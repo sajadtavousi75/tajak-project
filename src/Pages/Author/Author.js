@@ -8,7 +8,7 @@ export default function Author() {
   return (
     <>
     <Navbar />
-    <section className="main font-roya bg-bg pt-[130px]">
+    <section className="main font-roya bg-bg pt-[120px]">
       <AboutaAuthor />
       <EventAuthor />
     </section>

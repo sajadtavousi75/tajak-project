@@ -9,7 +9,7 @@ import "./Questions.css";
 
 export default function Questions() {
   return (
-    <div className="questions bg-gmelo mt-5">
+    <div className="questions bg-gmelo mt-16 ">
       <div className="container">
         <div className="questions-content ">
           <h1 className="w-[380px] h-[40px] bg-bg flex items-center justify-center mx-auto text-text font-bold rounded-b-lg shadow-lg text-xs md:text-sm">پرسش های متداول</h1>

@@ -5,7 +5,7 @@ import AddresBox from "../AddresBox/AddresBox";
 export default function AddresSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className="addressection bg-gmelo rounded-lg my-3 w-full p-5">
+    <div className="addressection bg-gmelo rounded-lg  w-full p-3">
       <div className="container">
         <div className="content  ">
           <AddresBox />

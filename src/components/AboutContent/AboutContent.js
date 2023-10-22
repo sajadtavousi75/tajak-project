@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutContent() {
   return (
-    <div className="aboutcontent">
+    <div className="aboutcontent mt-16">
       <div className="container">
         <div className="content flex flex-col items-center justify-center pt-12">
           <img src="/images/logofooter.png" alt="" />

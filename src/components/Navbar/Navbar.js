@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 
 import "./Navbar.css";
@@ -63,7 +64,9 @@ export default function Navbar() {
                 alt=""
                 className="navbar-logo cursor-pointer md:hidden	"
               />
+              <NavLink to='/'>
               <img className="hidden md:block " src="/images/logo.svg" alt="" />
+              </NavLink>
             </div>
             {/* start mobile menu */}
             <div className="navbar-middle flex flex-col justify-between	 items-center w-2/4 md:hidden">
@@ -259,9 +262,9 @@ export default function Navbar() {
                         </clipPath>
                       </defs>
                     </svg>
-                    <a className="mr-5  text-xs	lg:text-sm xl:text-lg" href="#">
+                    <p className="mr-5  text-xs	lg:text-sm xl:text-lg">
                       دسته بندی
-                    </a>
+                    </p>
                     <ul
                       onMouseEnter={() => setIsSubMenuOpen(true)}
                       onMouseLeave={() => setIsSubMenuOpen(false)}
@@ -411,7 +414,8 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </li>
-                  <li className="flex hover:bg-bg p-2 rounded-t	">
+                  <li className="">
+                    <NavLink to='/about' className={(link) => link.isActive ? 'bg-bg flex hover:bg-bg p-2 rounded-t' : 'flex hover:bg-bg p-2 rounded-t'}>
                     <svg
                       width="25"
                       height="22"
@@ -460,9 +464,10 @@ export default function Navbar() {
                         </clipPath>
                       </defs>
                     </svg>
-                    <a className="mr-5 text-xs	lg:text-sm xl:text-lg" href="#">
+                    <p  className="mr-5 text-xs	lg:text-sm xl:text-lg">
                       درباره تاجک
-                    </a>
+                    </p>
+                    </NavLink>
                   </li>
                   <li className="flex hover:bg-bg p-2 rounded-t	">
                     <svg
@@ -541,22 +546,22 @@ export default function Navbar() {
                         fill="#519D9E"
                       />
                     </svg>
-                    <a className="mr-5 text-xs	lg:text-sm xl:text-lg" href="#">
+                    <p className="mr-5 text-xs	lg:text-sm xl:text-lg">
                       نصب تاجک
-                    </a>
+                    </p>
                   </li>
                 </ul>
               </div>
             </div>
             {/* end main menu */}
             <div className="navbar-left flex justify-around items-center relative  ">
-              <button className="ml-3">
+              <NavLink to='/basket'>
                 <img
-                  className=" w-6 h-6 md:w-10 md:h-10 "
+                  className=" w-6 h-6 md:w-10 md:h-10 ml-3"
                   src="/images/Frame 365.png"
                   alt=""
                 />
-              </button>
+              </NavLink>
               <div className="relative flex items-center">
                 <button onClick={handelProfile} className="w-6 h-6 md:w-10 md:h-10 md:absolute	md:-right-2">
                 <img
@@ -572,7 +577,7 @@ export default function Navbar() {
               <div ref={profilRef} className={`${showProfile ? 'block' : 'hidden'} menu-profile w-[212px] h-auto bg-bg absolute	top-[50px] left-0 shadow-lg rounded-lg`}>
                 <ul className="p-4">
                   <li className="flex items-center justify-between">
-                    <a className="font-bold text-text" href="">نام کاربری</a>
+                    <NavLink to='/my-account/edit' className="font-bold text-text" href="">نام کاربری</NavLink>
                     <svg
                       width="24"
                       height="24"
@@ -612,7 +617,7 @@ export default function Navbar() {
                         fill="#519D9E"
                       />
                     </svg>
-                    <a className="font-bold text-text" href="">تاریحچه سفارشات</a>
+                    <NavLink to='/my-account/history' className="font-bold text-text" href="">تاریحچه سفارشات</NavLink>
                   </li>
                   <li className="flex items-center justify-between mt-4">
                     <svg
@@ -629,7 +634,7 @@ export default function Navbar() {
                         fill="#519D9E"
                       />
                     </svg>
-                    <a className="font-bold text-text" href="">کتاب های مورد علاقه</a>
+                    <NavLink to='/my-account/saved' className="font-bold text-text" href="">کتاب های مورد علاقه</NavLink>
                   </li>
                   <li className="flex items-center justify-between mt-4">
                     <svg
@@ -648,7 +653,7 @@ export default function Navbar() {
                         fill="#519D9E"
                       />
                     </svg>
-                    <a className="font-bold text-text" href="">آدرس های من</a>
+                    <NavLink to='/my-account/addres' className="font-bold text-text" href="">آدرس های من</NavLink>
                   </li>
                   <hr />
                   <li className="flex items-center justify-between">

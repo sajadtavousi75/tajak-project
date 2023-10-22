@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AboutaAuthor() {
   return (
-    <div className="aboutauthor">
+    <div className="aboutauthor mt-16">
         <div className="container">
             <div className="aboutauthor-content flex flex-col items-center justify-center md:flex-row py-5 gap-5">
                 <img className='w-[150px] h-[150px]' src="/images/دارن هاردی.png" alt="" />

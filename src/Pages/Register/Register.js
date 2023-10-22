@@ -7,7 +7,7 @@ export default function Register() {
   return (
     <>
     <Navbar />
-    <section className="main font-roya bg-bg pt-[130px]">
+    <section className="main font-roya bg-bg pt-[120px]">
       <RegisterContent />
     </section>
     <footer className='font-roya bg-bg'>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function RegisterContent() {
   return (
-    <div className="registercontent  py-5 ">
+    <div className="registercontent  py-16 ">
       <div className="container">
         <div className="content flex items-center justify-center gap-5">
           <div className="img  ">

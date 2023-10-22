@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function OfferDay() {
   return (
-    <div className="offerday bg-bg py-4">
+    <div className="offerday bg-bg pt-16">
         <div className="container">
             <div className="offerday-content">
                 <h1 className='offerday-title text-center text-lg font-bold border-solid border-gmain border-y-2 rounded-lg p-2 text-text'>پیشنهاد روز سایت</h1>

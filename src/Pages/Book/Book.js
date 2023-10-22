@@ -11,7 +11,7 @@ export default function Book() {
   return (
     <>
     <Navbar />
-    <section className="main font-roya bg-bg pt-[130px]">
+    <section className="main font-roya bg-bg pt-[120px]">
       <BookContent />
       <AboutBook />
       <PopularSection />

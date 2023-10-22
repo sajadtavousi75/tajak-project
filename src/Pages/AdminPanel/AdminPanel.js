@@ -7,12 +7,15 @@ export default function AdminPanel() {
       <div className="panelcontent bg-bg font-roya   w-full ">
         <div className="container ">
           <Sidebar />
-          <div className="main pr-[330px] pt-5">
+          <div className="main pr-[330px] pt-5 pb-3">
             <div className="container">
               <Outlet />
             </div>
           </div>
         </div>
+          <div>
+            <img className="w-full" src="/images/Frame 178.png" alt="" />
+          </div>
       </div>
     </>
   );

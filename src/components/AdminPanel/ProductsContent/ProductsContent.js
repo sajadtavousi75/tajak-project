@@ -3,7 +3,7 @@ import ProductBox from "../ProductBox/ProductBox";
 
 export default function ProductsContent() {
   return (
-    <div className="productcontent   pt-14 pb-5">
+    <div className="productcontent   pt-14 ">
       <div className="content bg-gmelo rounded-lg min-h-[100vh]">
         <h1 className="w-[380px] h-10 mx-auto flex items-center justify-center bg-bg text-text font-bold rounded-b-lg shadow-lg">
           محصولات

@@ -9,7 +9,7 @@ export default function Addres() {
     <>
     <Navbar />
     <section className="main flex font-roya bg-bg pt-[120px]">
-      <div className="container flex">
+      <div className="container my-16  flex">
       <Sidebar />
       <AddresSection />
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Comments() {
   return (
-    <div className="comments py-10">
+    <div className="comments bg-bg py-16">
         <div className="container">
             <div className="comments-content">
                 <h1 className='bg-bg text-text flex  items-center justify-center mx-auto w-[380px] h-10 shadow-lg rounded-lg font-bold'>نظرات کاربران</h1>
